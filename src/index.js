@@ -20,11 +20,11 @@ const GPRenderComponent = ({
   return (
     <Suspense
       fallback={
-        customSpinner !== null && spinner
-          ? customSpinner
-          : spinner
-          ? (<div className={'fallbackLoading'}>loading...</div>)
-          : null
+        customSpinner !== null && spinner ? (
+          customSpinner
+        ) : spinner ? (
+          <div className={"fallbackLoading"}>loading...</div>
+        ) : null
       }
     >
       <BrowserRouter>
@@ -38,7 +38,7 @@ const GPRenderComponent = ({
                 <Component {...props} data={data} />
               )
             ) : spinner ? (
-              <div className={'beforeRenderLoading'}>Loading data...</div>
+              <div className={"beforeRenderLoading"}>Loading data...</div>
             ) : (
               <Component {...props} data={data} />
             )
@@ -46,6 +46,14 @@ const GPRenderComponent = ({
         />
       </BrowserRouter>
     </Suspense>
+  );
+};
+
+const ErrorComponent = () => {
+  return (
+    <div className={"errorComponentClass"}>
+      <h1>Component prop required property</h1>
+    </div>
   );
 };
 
@@ -57,6 +65,7 @@ GPRenderComponent.defaultProps = {
   spinner: false,
   customSpinner: null,
   data: PropTypes.any,
+  component: ErrorComponent,
 };
 
 /**

@@ -61,6 +61,7 @@ const App = () => {
 
 | Name   |      Type      |  Default | Descrption |
 |:----------:|:-------------:|:----:|:------|
+| component |  Component | ErrorComponent  | example: Home, Profile |
 | spinner |  boolean | false | Loader will wait for the component loading |
 | customSpinner | element | null | Pass custom spinner |
 | data | any | null | Can be Array, Object etc |
