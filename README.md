@@ -57,7 +57,7 @@ const App = () => {
 }
 ````
 
-## GPRenderComponent Class Props
+## GPRenderComponent Props
 
 | Name   |      Type      |  Default | Descrption |
 |:----------:|:-------------:|:----:|:------|
